@@ -15,11 +15,10 @@ import java.util.Map;
 public class RecipeController {
     private Map<Integer, Recipe> recipes = new HashMap<>();
 
-    @Autowired
     RecipeService recipeService;
 
-    RecipeController(RecipeService recipeService){
-        this.recipeService = recipeService;
+    RecipeController(){
+        this.recipeService = new RecipeService(recipes);
     }
     /**
      * GET /api/recipe/{id} returns a recipe with a specified id as a JSON object (where {id} is the id of a recipe).

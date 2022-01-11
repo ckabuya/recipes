@@ -1,11 +1,13 @@
 package recipes.service;
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
 import recipes.model.Recipe;
-@service
+@Service
 public class RecipeService {
     private Map<Integer, Recipe> recipesList;
 
-    RecipeService(Map<Integer, Recipe> map){
+    public RecipeService(Map<Integer, Recipe> map){
         this.recipesList = map;
     }
 
@@ -24,4 +26,5 @@ public class RecipeService {
     public Recipe getRecipe(Integer id){
         return recipesList.get(id);
     }
+
 }
